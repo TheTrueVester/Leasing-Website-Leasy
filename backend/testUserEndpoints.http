@@ -1,0 +1,196 @@
+###
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{"email": "new.user@tum.de",
+  "password": "newPass",
+  "lastname": "user",
+  "firstname": "new"
+}
+###
+###
+PUT http://localhost:8080/users/updateUser
+Content-Type: application/json
+
+{"_id": "665c3a28bea45b92aa1ec1f2",
+"password": "strongPassword1234"}
+###
+###
+PUT http://localhost:8080/users/updateUser
+Content-Type: application/json
+
+{"_id": "66579c6610c78d7b413a7b6e",
+  "password": "newPassword123",
+  "lastname": "Newlastname",
+  "firstname": "Max"}
+###
+###
+PUT http://localhost:8080/users/updateUser
+Content-Type: application/json
+
+{"_id": "66579c6610c78d7b413a7b6e",
+  "userBioAttributes": {
+
+  }}
+###
+###
+GET http://localhost:8080/users/login
+content-Type: application/json
+
+{
+  "email": "zexin.gong@tum.de",
+  "password": "strongPassword1234"
+}
+###
+POST http://localhost:8080/listings/create
+content-Type: application/json
+
+{
+  "title": "title",
+  "description": "description",
+  "availableFrom": "2024-06-20",
+  "availableTo":  "2024-07-30",
+  "size": 1.50,
+  "price": 400.00,
+  "address": {
+    "street": "Marienplatz",
+    "streetNumber": "19c",
+    "postalCode": 80939,
+    "city": "Munich",
+    "country": "Germany"
+  },
+  "dormType": "STUDENT_DORMITORY",
+  "userEmail": "lukas.gong@tum.de"
+}
+###
+###
+POST http://localhost:8080/applications/
+Content-Type: application/json
+
+{
+  "message": "Looking forward to stay at your place.",
+  "applicantEmail": "kriskokona@gmail.com",
+  "listingID": "666f0c179711c418012f7cdf"
+}
+### 
+GET http://localhost:8080/applications/get/u/66638d7a3d84f36a11051648
+Content-Type: application/json
+
+### 
+GET http://localhost:8080/applications/get/l/66670031931a576f7a0abb05
+Content-Type: application/json
+
+###
+DELETE http://localhost:8080/applications/666707200695e61a5719fb03
+Content-Type: application/json
+
+###
+POST http://localhost:8080/bookings/create
+Content-Type: application/json
+
+{
+  "hostEmail": "evan.christopher@tum.de",
+  "tenantEmail": "kriskokona@gmail.com",
+  "applicationID": "6671e50cbe1132f88c6f7ae8"
+}
+
+###
+GET http://localhost:8080/bookings/6671cb285359fc27e7738168
+Content-Type: application/json
+
+###
+GET http://localhost:8080/bookings/tenant/66638d7a3d84f36a11051648
+Content-Type: application/json
+
+###
+GET http://localhost:8080/bookings/host/66650aba56051454eeae9ae3
+Content-Type: application/json
+
+###
+GET  http://localhost:8080/bookings
+Content-Type: application/json
+
+###
+PUT http://localhost:8080/me
+Content-Type: application/json
+
+{"email": "new.user@tum.de",
+  "password": "newPass",
+  "lastname": "user",
+  "firstname": "new"
+}
+###
+
+###
+GET http://localhost:8080/users/66603935fd7120398ed51702
+content-Type: application/json
+###
+
+###
+PUT http://localhost:8080/users/edit
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+
+{
+  "email": "lukas.vester@tum.de",
+  "password": "password",
+  "lastname": "Lukas",
+  "firstname": "Vester"
+}
+###
+GET http://localhost:8080/applications/get/u/66638d7a3d84f36a11051648
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+###
+GET http://localhost:8080/applications/get/6675c47095fd470af3e4c2c5
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+###
+POST http://localhost:8080/chat/create
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+
+{
+  "hostId": "66603935fd7120398ed51702",
+  "applicantId": "667bbce72a8cd973e4215b50"
+}
+###
+POST http://localhost:8080/chat/send
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+
+{
+  "info": {
+    "senderId": "667bbce72a8cd973e4215b50",
+    "recipientId": "66603935fd7120398ed51702",
+    "text": "i think it is"
+  },
+  "file": {
+
+  }
+}
+###
+POST http://localhost:8080/chat/send
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+
+{
+  "info": {
+    "senderId": "66603935fd7120398ed51702",
+    "recipientId": "667bbce72a8cd973e4215b50",
+    "text": "no file?"
+  }
+}
+###
+GET http://localhost:8080/chat/get/66603935fd7120398ed51702
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+###
+PUT http://localhost:8080/users/addUnread
+content-Type: application/json
+authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjA0MGI5ZWQ5YTNhNDI2MzEyZDM0MSIsImlhdCI6MTcxODYzMzk1NCwiZXhwIjoxNzE4NjQxMTU0fQ.cdKcAeTSvQNCE1NVW9YDRl_EW1W3laJkWzleixqhVuo"
+
+{
+  "senderId": "667bbce72a8cd973e4215b50",
+  "recipientId": "66603935fd7120398ed51702"
+}
